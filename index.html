@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>SCHEDULER</title>
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="#">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <meta property='og:url' content='http://www.mysite.com'>
+    <meta property='og:title' content='페이지 제목'>
+    <meta property='og:type' content='website'> 
+    <meta property='og:description' content='페이지 설명'>
+    <meta property='og:image' content='http://www.mysite.com/myimage.jpg'>
+</head>
+<body>
+
+<!-- position:fixed pc에선 왼쪽에, 모바일에선 화면 맨 아래로 붙임-->
+<header>
+    <nav id="nav">
+        <ul class="flex">
+            <li><i class="xi-network-home xi-2x"></i></li>
+            <li><i class="xi-view-list xi-2x"></i></li>
+            <li><i class="xi-calendar-check xi-2x"></i></li>
+            <li><i class="xi-profile xi-2x"></i></li>
+            <li><i class="xi-cog xi-2x"></i></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 화면 상단에 들어갈 사이드바 -->
+<section id="util" class="flex">
+    <h1>My Name</h1>
+    <i class="xi-sun-o xi-2x"> <span id="weather">15</span><span>°c</span></i> <!--현재날씨-->
+    <i class="xi-time-o xi-2x"> <span id="nowtime">23:44:35</span></i>
+</section>
+
+<!-- 메인콘텐츠 들어갈 영역 -->
+<section id="todaylist">
+    <div id="content_title" class="flex"> <!--플렉스 레프트-->
+        <div>
+            <img src="" alt="img">
+            <i class="xi-pen-o xi-x"></i>   <!--포지션앱솔루트,이미지끝에붙음-->
+        </div>
+        <div>
+            <h2>Today Keyword</h2>
+            <i class="xi-pen-o xi-x"></i>   <!--포지션앱솔루트,글자끝에붙음-->
+            <p>Next Schedule : <span></span> / ~time</p>
+        </div>
+    </div>
+
+    <div id="content_subtitle" class="flex"> <!--플렉스 비트윈-->
+        <div class="flex">
+            <h3>~date</h3>
+            <i class="xi-arrow-left xi-x">이전</i>
+            <i class="xi-arrow-right xi-x">다음</i>
+            <i class="xi-star-o xi-2x"></i> <!--중요 필터-->
+        </div>
+        <div class="flex">
+            <i class="xi-plus-circle-o xi-x">plus btn</i>
+            <h4>Add Schedule</h4>
+        </div>
+    </div>
+
+    <div id="content_list">
+        <div class="time_00">00:00</div>
+        <div class="time_01">01:00</div>
+        <div class="time_02">02:00</div>
+        <div class="time_03">03:00</div>
+        <div class="time_04">04:00</div>
+        <div class="time_05">05:00</div>
+        <div class="time_06">06:00</div>
+        <div class="time_07">07:00</div>
+        <div class="time_08">08:00</div>
+        <div class="time_09">09:00</div>
+        <div class="time_10">10:00</div>
+        <div class="time_11">11:00</div>
+        <div class="time_12">12:00</div>
+        <div class="time_13">13:00</div>
+        <div class="time_14">14:00</div>
+        <div class="time_15">15:00</div>
+        <div class="time_16">16:00</div>
+        <div class="time_17">17:00</div>
+        <div class="time_18">18:00</div>
+        <div class="time_19">19:00</div>
+        <div class="time_20">20:00</div>
+        <div class="time_21">21:00</div>
+        <div class="time_22">22:00</div>
+        <div class="time_23">23:00</div>
+        <div class="time_24">24:00</div>
+    </div>
+
+    <div class="schedule flex">
+        <div><i class="xi-star-o xi-x">icon</i></div> <!--중요도 체크버튼-->
+        <div>
+            <h2 class="schedule_title">title</h2>   <!--제목-->
+            <h3 class="schedule_desc">desc</h3>     <!--내용-->
+            <p class="schedule_time">times</p>      <!--설정시간-->
+        </div>
+        <div>
+            <i class="xi-ellipsis-v xi-x">ellipsis</i>  <!--더보기버튼, 누르면 아이콘 바뀌고 하위메뉴 보여줌-->
+            <ul class="flex">
+                <li><i class="xi-pen-o xi-x"></i></li>  <!--수정버튼-->
+                <li><i class="xi-share xi-x"></i></li>  <!--공유버튼-->
+                <li><i class="xi-close xi-x"></i></li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<footer></footer>
+<script>
+    let nowtime = document.getElementById("nowtime");
+    function timer(){
+        let times = new Date();   
+
+        let year = times.getFullYear(); // 년도
+        let month = times.getMonth() + 1;  // 월
+        let date = times.getDate();  // 날짜
+
+        let hours = times.getHours();
+        let minutes = times.getMinutes();
+        let seconds = times.getSeconds();
+
+        nowtime.innerText = `${year}/${month}/${date} `+`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+    }
+    timer();
+    setInterval(timer,1000);
+
+</script>
+</body>
+</html>

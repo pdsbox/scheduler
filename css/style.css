@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size:16px;
+    font-weight:300;
+    color:#333;
+}
+
+
+/* 전역 */
+
+.flex{ 
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+}
+i{
+    cursor:pointer;
+    color:#555
+}
+section{
+    padding-left:calc(2% + 150px);
+    padding-right:3%;
+    box-sizing:border-box;
+    margin-bottom:40px;
+}
+section:first-of-type{
+    padding-top:35px;
+}
+
+
+/* 네비게이션 */
+#nav{
+    width:150px;
+    height:1280px;
+    position:fixed;
+    left:0;
+    box-shadow:0px 0px 7px 3px rgba(0,0,0,0.1);
+}
+#nav .flex{
+    flex-flow:column wrap;
+    text-align:center;
+}
+#nav .flex li{
+    margin:20px 0;
+}
+#nav .flex li:first-of-type{
+    margin:35px 0 20px;
+}
+#nav i:hover{
+    color:darkblue;
+}
+
+
+/* 유틸 */
+#util{
+    justify-content:center;
+    align-items: center;
+}
+#util h1{
+    width:40%;
+    text-align:left;
+    font-weight:600;
+    font-size:1.4rem;
+}
+#util i:first-of-type{
+    min-width:120px;
+}
+#util i{
+    text-align:center;
+    margin:0 1%;
+    height:32px;
+}
+#util i:last-of-type{
+    min-width:200px;
+    text-align:left;
+}
+#util span{
+    font-size:1.5rem;
+    vertical-align:20%;
+}
+
+
+/* 컨텐츠타이틀 */
