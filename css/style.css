@@ -8,7 +8,9 @@ html{
     font-weight:300;
     color:#333;
 }
-
+img{
+    vertical-align: top;
+}
 
 /* 전역 */
 
@@ -23,12 +25,12 @@ i{
 }
 section{
     padding-left:calc(2% + 150px);
-    padding-right:3%;
+    padding-right:calc(2% + 15px);
     box-sizing:border-box;
-    margin-bottom:40px;
+    margin-bottom:60px;
 }
 section:first-of-type{
-    padding-top:35px;
+    padding-top:40px;
 }
 
 
@@ -48,7 +50,7 @@ section:first-of-type{
     margin:20px 0;
 }
 #nav .flex li:first-of-type{
-    margin:35px 0 20px;
+    margin:40px 0 20px;
 }
 #nav i:hover{
     color:darkblue;
@@ -57,31 +59,80 @@ section:first-of-type{
 
 /* 유틸 */
 #util{
-    justify-content:center;
+    justify-content:space-between;
     align-items: center;
 }
 #util h1{
-    width:40%;
     text-align:left;
     font-weight:600;
     font-size:1.4rem;
 }
+#util>div{
+    min-width:calc(3% + 320px);
+}
 #util i:first-of-type{
-    min-width:120px;
+    min-width:100px;
 }
 #util i{
     text-align:center;
     margin:0 1%;
-    height:32px;
 }
 #util i:last-of-type{
     min-width:200px;
     text-align:left;
 }
 #util span{
-    font-size:1.5rem;
-    vertical-align:20%;
+    font-size:1.2rem;
+    vertical-align:30%;
 }
 
 
 /* 컨텐츠타이틀 */
+#content_title{
+    height:200px;
+    border-bottom:1px dotted #d0d0d0;
+}
+#content_title img{
+    width:140px;
+    height:180px;
+    border-radius:15%;
+}
+#content_title.flex{
+    justify-content:left;
+}
+#content_title>div{
+    height:180px;
+    position:relative;
+    margin-right:30px;
+
+}
+#content_title i{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    text-align:center;
+    font-weight:500;
+    background:#fff;
+    border-radius:20%;
+    width:20px; height:20px;
+    line-height:20px;
+    display:block;
+}
+#content_title>div:first-of-type{
+    max-width:140px;
+    overflow:hidden;
+}
+#content_title>div:last-of-type{
+    width:calc(100% - 170px);
+    margin-right:0;
+    line-height:3;
+}
+#content_title h2 span{
+    font-size:1.3rem;
+    font-weight:400;
+    cursor:pointer;
+}
+
+#todaylist>div{
+    margin-bottom:40px;
+}

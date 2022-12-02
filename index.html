@@ -35,21 +35,22 @@
 <!-- 화면 상단에 들어갈 사이드바 -->
 <section id="util" class="flex">
     <h1>My Name</h1>
-    <i class="xi-sun-o xi-2x"> <span id="weather">15</span><span>°c</span></i> <!--현재날씨-->
-    <i class="xi-time-o xi-2x"> <span id="nowtime">23:44:35</span></i>
+    <div class="flex">
+        <i class="xi-sun-o xi-2x"> <span id="weather">15</span><span>°c</span></i> <!--현재날씨-->
+        <i class="xi-time-o xi-2x"> <span id="nowtime">23:44:35</span></i>
+    </div>
 </section>
 
 <!-- 메인콘텐츠 들어갈 영역 -->
 <section id="todaylist">
     <div id="content_title" class="flex"> <!--플렉스 레프트-->
         <div>
-            <img src="" alt="img">
+            <img src="./images/portrait.jpg" alt="img"> <!--이미지 클릭시 확대 fixed + center/center -->
             <i class="xi-pen-o xi-x"></i>   <!--포지션앱솔루트,이미지끝에붙음-->
         </div>
         <div>
-            <h2>Today Keyword</h2>
-            <i class="xi-pen-o xi-x"></i>   <!--포지션앱솔루트,글자끝에붙음-->
-            <p>Next Schedule : <span></span> / ~time</p>
+            <h2><span id="keyword">Today Keyword</span></h2>  <!--클릭시 내용 변경할 수 있는 입력창-->
+            <p>Next Schedule : <span id="nxt_title">eat fried chicken</span> / <span id="nxt_timer">~time</span></p> <!--최근 스케줄 제목, 시간 보여줌-->
         </div>
     </div>
 
@@ -94,25 +95,27 @@
         <div class="time_24">24:00</div>
     </div>
 
-    <div class="schedule flex">
-        <div><i class="xi-star-o xi-x">icon</i></div> <!--중요도 체크버튼-->
-        <div>
-            <h2 class="schedule_title">title</h2>   <!--제목-->
-            <h3 class="schedule_desc">desc</h3>     <!--내용-->
-            <p class="schedule_time">times</p>      <!--설정시간-->
-        </div>
-        <div>
-            <i class="xi-ellipsis-v xi-x">ellipsis</i>  <!--더보기버튼, 누르면 아이콘 바뀌고 하위메뉴 보여줌-->
-            <ul class="flex">
-                <li><i class="xi-pen-o xi-x"></i></li>  <!--수정버튼-->
-                <li><i class="xi-share xi-x"></i></li>  <!--공유버튼-->
-                <li><i class="xi-close xi-x"></i></li>
-            </ul>
-        </div>
-    </div>
 
 </section>
+
+<div class="schedule flex">
+    <div><i class="xi-star-o xi-x">icon</i></div> <!--중요도 체크버튼-->
+    <div>
+        <h2 class="schedule_title">title</h2>   <!--제목-->
+        <h3 class="schedule_desc">desc</h3>     <!--내용-->
+        <p class="schedule_time">times</p>      <!--설정시간-->
+    </div>
+    <div>
+        <i class="xi-ellipsis-v xi-x">ellipsis</i>  <!--더보기버튼, 누르면 아이콘 바뀌고 하위메뉴 보여줌-->
+        <ul class="flex">
+            <li><i class="xi-pen-o xi-x"></i></li>  <!--수정버튼-->
+            <li><i class="xi-share xi-x"></i></li>  <!--공유버튼-->
+            <li><i class="xi-close xi-x"></i></li>
+        </ul>
+    </div>
+</div>
 <footer></footer>
+
 <script>
     let nowtime = document.getElementById("nowtime");
     function timer(){
