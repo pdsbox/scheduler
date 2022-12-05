@@ -1,3 +1,4 @@
+//실시간 시간정보
 let nowtime = document.getElementById("nowtime");
 function timer(){
     let times = new Date();   
@@ -14,3 +15,13 @@ function timer(){
 }
 timer();
 setInterval(timer,1000);
+
+
+$(function(){
+    //중요리스트 토글버튼 애니메이션
+    $(".implist").click(function(){
+        $(this).toggleClass("xi-star");
+        $(this).toggleClass("xi-star-o");
+    });
+    
+})

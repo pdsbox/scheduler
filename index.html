@@ -23,11 +23,11 @@
 <header>
     <nav id="nav">
         <ul class="flex">
-            <li><i class="xi-network-home xi-2x"></i></li>
-            <li><i class="xi-view-list xi-2x"></i></li>
-            <li><i class="xi-calendar-check xi-2x"></i></li>
-            <li><i class="xi-profile xi-2x"></i></li>
-            <li><i class="xi-cog xi-2x"></i></li>
+            <li><i class="xi-network-home xi-2x"></i></li><!--메인화면(index페이지)-->
+            <li><i class="xi-view-list xi-2x"></i></li><!--시간대별 일정만 보여주는 목록-->
+            <li><i class="xi-calendar-check xi-2x"></i></li><!--요일별 일정만 보여주는 목록-->
+            <li><i class="xi-profile xi-2x"></i></li><!--내정보관리-->
+            <li><i class="xi-cog xi-2x"></i></li><!--설정창-->
         </ul>
     </nav>
 </header>
@@ -36,8 +36,8 @@
 <section id="util" class="flex">
     <h1>My Name</h1>
     <div class="flex">
-        <i class="xi-sun-o xi-2x"> <span id="weather">15</span><span>°c</span></i> <!--현재날씨-->
-        <i class="xi-time-o xi-2x"> <span id="nowtime">23:44:35</span></i>
+        <i class="xi-sun-o xi-2x nopointer"> <span id="weather">15</span><span>°c</span></i> <!--현재날씨-->
+        <i class="xi-time-o xi-2x nopointer"> <span id="nowtime">time</span></i>
     </div>
 </section>
 
@@ -49,50 +49,82 @@
             <i class="xi-pen-o xi-x"></i>   <!--포지션앱솔루트,이미지끝에붙음-->
         </div>
         <div>
-            <h2><span id="keyword">Today Keyword</span></h2>  <!--클릭시 내용 변경할 수 있는 입력창-->
-            <p>Next Schedule : <span id="nxt_title">eat fried chicken</span> / <span id="nxt_timer">~time</span></p> <!--최근 스케줄 제목, 시간 보여줌-->
+            <h2><span id="keyword">Today's Keyword</span></h2>  <!--클릭시 내용 변경할 수 있는 입력창-->
+            <div>
+                <p>Next Schedule</p>
+                <span id="nxt_title">eat fried chicken</span> / <span id="nxt_timer">~time</span>
+            </div> <!--다음 스케줄 제목, 시간 보여줌-->
         </div>
     </div>
 
     <div id="content_subtitle" class="flex"> <!--플렉스 비트윈-->
         <div class="flex">
-            <h3>~date</h3>
-            <i class="xi-arrow-left xi-x">이전</i>
-            <i class="xi-arrow-right xi-x">다음</i>
-            <i class="xi-star-o xi-2x"></i> <!--중요 필터-->
+            <i class="xi-arrow-left xi-x"></i>
+            <h3 id="date">date</h3><!--클릭시 달력-->
+            <i class="xi-arrow-right xi-x"></i>
+            <i class="xi-star-o xi-2x animated implist"></i> <!--중요 필터-->
         </div>
-        <div class="flex">
-            <i class="xi-plus-circle-o xi-x">plus btn</i>
+        <div id ="add_schedule" class="flex">
+            <i class="xi-plus-circle-o xi-x"></i>
             <h4>Add Schedule</h4>
         </div>
     </div>
 
-    <div id="content_list">
-        <div class="time_00">00:00</div>
-        <div class="time_01">01:00</div>
-        <div class="time_02">02:00</div>
-        <div class="time_03">03:00</div>
-        <div class="time_04">04:00</div>
-        <div class="time_05">05:00</div>
-        <div class="time_06">06:00</div>
-        <div class="time_07">07:00</div>
-        <div class="time_08">08:00</div>
-        <div class="time_09">09:00</div>
-        <div class="time_10">10:00</div>
-        <div class="time_11">11:00</div>
-        <div class="time_12">12:00</div>
-        <div class="time_13">13:00</div>
-        <div class="time_14">14:00</div>
-        <div class="time_15">15:00</div>
-        <div class="time_16">16:00</div>
-        <div class="time_17">17:00</div>
-        <div class="time_18">18:00</div>
-        <div class="time_19">19:00</div>
-        <div class="time_20">20:00</div>
-        <div class="time_21">21:00</div>
-        <div class="time_22">22:00</div>
-        <div class="time_23">23:00</div>
-        <div class="time_24">24:00</div>
+    <div id="content_list" class="flex">
+        <div>
+            <div class="time_00">00:00</div>
+            <div class="time_01">01:00</div>
+            <div class="time_02">02:00</div>
+            <div class="time_03">03:00</div>
+            <div class="time_04">04:00</div>
+            <div class="time_05">05:00</div>
+            <div class="time_06">06:00</div>
+            <div class="time_07">07:00</div>
+            <div class="time_08">08:00</div>
+            <div class="time_09">09:00</div>
+            <div class="time_10">10:00</div>
+            <div class="time_11">11:00</div>
+            <div class="time_12">12:00</div>
+            <div class="time_13">13:00</div>
+            <div class="time_14">14:00</div>
+            <div class="time_15">15:00</div>
+            <div class="time_16">16:00</div>
+            <div class="time_17">17:00</div>
+            <div class="time_18">18:00</div>
+            <div class="time_19">19:00</div>
+            <div class="time_20">20:00</div>
+            <div class="time_21">21:00</div>
+            <div class="time_22">22:00</div>
+            <div class="time_23">23:00</div>
+            <div class="time_24">24:00</div>
+        </div>
+        <div id="list">
+            <div class="time_00"></div>
+            <div class="time_01"></div>
+            <div class="time_02"></div>
+            <div class="time_03"></div>
+            <div class="time_04"></div>
+            <div class="time_05"></div>
+            <div class="time_06"></div>
+            <div class="time_07"></div>
+            <div class="time_08"></div>
+            <div class="time_09"></div>
+            <div class="time_10"></div>
+            <div class="time_11"></div>
+            <div class="time_12"></div>
+            <div class="time_13"></div>
+            <div class="time_14"></div>
+            <div class="time_15"></div>
+            <div class="time_16"></div>
+            <div class="time_17"></div>
+            <div class="time_18"></div>
+            <div class="time_19"></div>
+            <div class="time_20"></div>
+            <div class="time_21"></div>
+            <div class="time_22"></div>
+            <div class="time_23"></div>
+            <div class="time_24"></div>
+        </div>
     </div>
 
 
